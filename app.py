@@ -23,11 +23,10 @@ page = st.sidebar.selectbox(
      "PREDICTING TRENDS (ARIMA AND LSTM)", "INTERACTIVE MAP"]
 )
 
-# Use relative path since the file is now in the 'data' folder within the repository
-file_path = "data/Library_Usage_20241011.csv"
-output_directory = "data"
+# File paths
+file_path = r"C:\Users\navya\Downloads\FDS_PROJ\Library_Usage_20241011.csv"
+output_directory = r"C:\Users\navya\Downloads\FDS_PROJ_Library_Analysis"
 output_file = os.path.join(output_directory, "Library_Usage_Cleaned.csv")
-
 
 # Load and clean the dataset
 @st.cache_data
@@ -106,6 +105,10 @@ if page == "VISUALIZATIONS":
     ax.set_ylabel('Total Checkouts')
     plt.xticks(rotation=45)
     st.pyplot(fig)
+    st.write("""
+    **Insight:** This box plot shows the distribution of total checkouts across different age ranges. 
+    It highlights the spread and identifies potential outliers within each age category.
+    """)
 
     # Line Plot: Checkouts and Renewals by Circulation Active Year
     st.subheader("Checkouts and Renewals Over the Years")
@@ -117,6 +120,10 @@ if page == "VISUALIZATIONS":
     ax.set_ylabel('Count')
     ax.legend()
     st.pyplot(fig)
+    st.write("""
+    **Insight:** This line plot reveals trends in library activity over the years. A comparison between 
+    total checkouts and renewals can indicate shifts in borrowing behavior.
+    """)
 
     # Pie Chart: Distribution of Patron Types
     st.subheader("Distribution of Patron Types")
@@ -127,6 +134,10 @@ if page == "VISUALIZATIONS":
     ax.set_title('Distribution of Patron Types')
     ax.axis('equal')
     st.pyplot(fig)
+    st.write("""
+    **Insight:** This pie chart provides a quick view of the proportion of different patron types. 
+    It helps to understand the demographic distribution of library users.
+    """)
 
     # Scatter Plot: Total Checkouts vs Total Renewals
     st.subheader("Scatter Plot of Total Checkouts vs Total Renewals")
@@ -136,6 +147,10 @@ if page == "VISUALIZATIONS":
     ax.set_xlabel('Total Checkouts')
     ax.set_ylabel('Total Renewals')
     st.pyplot(fig)
+    st.write("""
+    **Insight:** This scatter plot shows the relationship between total checkouts and renewals. 
+    It helps identify correlations or patterns between these two metrics.
+    """)
 
     # Histogram for Total Checkouts
     st.subheader("Distribution of Total Checkouts")
@@ -145,6 +160,10 @@ if page == "VISUALIZATIONS":
     ax.set_xlabel('Total Checkouts')
     ax.set_ylabel('Frequency')
     st.pyplot(fig)
+    st.write("""
+    **Insight:** The histogram displays the frequency distribution of total checkouts. 
+    The density curve (KDE) provides an estimate of the probability distribution.
+    """)
 
     # Countplot for Age Range
     st.subheader("Age Range Distribution of Patrons")
@@ -155,6 +174,10 @@ if page == "VISUALIZATIONS":
     ax.set_ylabel('Count')
     plt.xticks(rotation=45)
     st.pyplot(fig)
+    st.write("""
+    **Insight:** This count plot indicates how library usage is distributed across different age groups, 
+    providing insights into the demographics of the patrons.
+    """)
 
     # Correlation Matrix
     st.subheader("Correlation Matrix")
@@ -163,6 +186,10 @@ if page == "VISUALIZATIONS":
     sns.heatmap(correlation, annot=True, cmap='coolwarm', linewidths=.5, ax=ax)
     ax.set_title('Correlation Matrix')
     st.pyplot(fig)
+    st.write("""
+    **Insight:** The correlation matrix highlights relationships between numerical variables. 
+    Values closer to 1 or -1 indicate strong positive or negative correlations.
+    """)
 
     # Bar Plot: Average Total Checkouts by Patron Type
     st.subheader("Average Total Checkouts by Patron Type")
@@ -172,6 +199,11 @@ if page == "VISUALIZATIONS":
     ax.set_title('Average Total Checkouts by Patron Type')
     plt.xticks(rotation=45)
     st.pyplot(fig)
+    st.write("""
+    **Insight:** This bar plot displays the average number of total checkouts per patron type. 
+    It helps identify which patron groups are the most active borrowers. 
+    High values indicate frequent library usage within certain patron types.
+    """)
 
     # Bar Plot: Average Total Checkouts by Home Library Definition
     st.subheader("Average Total Checkouts by Home Library Definition")
@@ -181,6 +213,11 @@ if page == "VISUALIZATIONS":
     ax.set_title('Average Total Checkouts by Home Library')
     plt.xticks(rotation=90)
     st.pyplot(fig)
+    st.write("""
+    **Insight:** This bar plot reveals the average number of total checkouts across different home libraries. 
+    It provides insight into which libraries have the most engaged users. 
+    The comparison helps libraries understand their usage patterns and benchmark against others.
+    """)
 
 # Page 3: Machine Learning Models Section
 if page == "MACHINE LEARNING MODELS":
