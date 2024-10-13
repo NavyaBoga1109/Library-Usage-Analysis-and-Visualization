@@ -76,8 +76,8 @@ This bar chart visualizes the **average total checkouts per library**, helping i
 
 ---
 
-5. Interactive Map of Library Usage
-This interactive map displays library usage by location, filtered by patron type and year range. It provides valuable insights into geographic patterns in library activity.
+### 5. **Interactive Map of Library Usage**
+This interactive map displays **library usage by location, filtered by patron type and year range**. It provides valuable insights into geographic patterns in library activity.
 
 ![Screenshot (107)](https://github.com/user-attachments/assets/e41a977c-1609-4367-81a4-c6318b43547a)
 
