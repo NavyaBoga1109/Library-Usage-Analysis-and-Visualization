@@ -23,9 +23,9 @@ page = st.sidebar.selectbox(
      "PREDICTING TRENDS (ARIMA AND LSTM)", "INTERACTIVE MAP"]
 )
 
-# File paths
-file_path = r"C:\Users\navya\Downloads\FDS_PROJ\Library_Usage_20241011.csv"
-output_directory = r"C:\Users\navya\Downloads\FDS_PROJ_Library_Analysis"
+# Use relative path since the file is now in the 'data' folder within the repository
+file_path = "data/Library_Usage_20241011.csv"
+output_directory = "data"
 output_file = os.path.join(output_directory, "Library_Usage_Cleaned.csv")
 
 # Load and clean the dataset
